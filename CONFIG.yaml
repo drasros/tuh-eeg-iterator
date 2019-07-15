@@ -1,0 +1,52 @@
+# sample_data
+example_edf_file: /home/asors/tuh_eeg_sampledata/v1.1.0/edf/02_tcp_le/006/00000606/s001_2003_10_22/00000606_s001_t001.edf
+
+# allowed channels, sampling rate
+VALID_CH_LIST: ['EEG A1-REF',
+                'EEG A2-REF',
+                'EEG C3-REF',
+                'EEG C4-REF',
+                'EEG CZ-REF',
+                'EEG F3-REF',
+                'EEG F4-REF',
+                'EEG F7-REF',
+                'EEG F8-REF',
+                'EEG FP1-REF',
+                'EEG FP2-REF',
+                'EEG FZ-REF',
+                'EEG O1-REF',
+                'EEG O2-REF',
+                'EEG P3-REF',
+                'EEG P4-REF',
+                'EEG PZ-REF',
+                'EEG T3-REF',
+                'EEG T4-REF',
+                'EEG T5-REF',
+                'EEG T6-REF']
+
+VALID_SAMPLING_RATE: 256.
+
+# Config of the EEG segments we want
+RESAMPLE_RATE: 64.
+RESAMPLE_METHOD: naive  # 'naive' or 'mne'
+SEGMENT_DURATION: 5.
+
+# Maximum allowed length to put into stack
+# (i.e. if a record is longer than this we will chose only
+# part of it in order to avoid too much influence from it).
+MAX_REC_DURATION_IN_STACK: 3600  # (in seconds, must be whole number. )
+
+# Parameters of the batch loading queues
+record_stack_size_train: 3
+record_exploit_rate_train: 1.
+queue_size_train: 1000
+
+record_stack_size_val: 3
+record_exploit_rate_val: 1.
+queue_size_val: 500
+
+record_stack_size_test: 80
+record_exploit_rate_test: 1.
+queue_size_test: 10000
+
+
